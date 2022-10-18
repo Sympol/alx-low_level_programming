@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
 * main - Print the word _putchar
@@ -8,12 +8,7 @@
 
 int main(void)
 {
-  int _putchar(char c){
-        printf("%c", c);
-        return 0;
-    }
-    
-    _putchar('_');
+     _putchar('_');
 	_putchar('p');
 	_putchar('u');
 	_putchar('t');
