@@ -1,6 +1,6 @@
 /**
   * _islower - checks character.
-  * Description : checks for lowercase character.
+  * description : checks for lowercase character.
   *
   * Return: 1 or 0
   */
