@@ -11,8 +11,8 @@ int main(void)
 	long int a = 1, b = 2;
 	long int next = a + b;
 
-	printf("%lu, ", a);
-	printf("%lu, ", b);
+	printf("%lu, \n", a);
+	printf("%lu, \n", b);
 	while (count <= 50)
 	{
 		if (count == 50)
@@ -21,7 +21,7 @@ int main(void)
 		}
 		else
 		{
-			printf("%lu, ", next);
+			printf("%lu, \n ", next);
 		}
 		a = b;
 		b = next;
