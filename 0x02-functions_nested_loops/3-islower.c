@@ -1,6 +1,6 @@
 /**
-  * _islower - checks for lowercase character.
-  *
+  * _islower - checks character.
+  * Description : checks for lowercase character.
   * Return: void
   */
 int _islower(int c)
