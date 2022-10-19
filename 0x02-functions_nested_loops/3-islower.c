@@ -1,7 +1,8 @@
 /**
   * _islower - checks character.
   * Description : checks for lowercase character.
-  * Return: void
+  *
+  * Return: 1 or 0
   */
 int _islower(int c)
 {
