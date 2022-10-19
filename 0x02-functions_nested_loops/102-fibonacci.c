@@ -7,26 +7,25 @@
 
 int main(void)
 {
-	int count = 3;
-	long int a = 1, b = 2;
-	long int next = a + b;
+	int i = 0;
+	long j = 1, k = 2;
 
-	printf("%lu,", a);
-	printf("%lu, \n", b);
-	while (count <= 50)
+	while (i < 50)
 	{
-		if (count == 50)
-		{
-			printf("%lu", next);
-		}
+		if (i == 0)
+			printf("%ld", j);
+		else if (i == 1)
+			printf(", %ld", k);
 		else
 		{
-			printf("%lu, ", next);
+			k += j;
+			j = k - j;
+			printf(", %ld", k);
 		}
-		a = b;
-		b = next;
-		next = a + b;
-		count++;
+
+		++i;
 	}
+
+	printf("\n");
 	return (0);
 }
