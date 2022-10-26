@@ -9,43 +9,29 @@
  */
 int _atoi(char *s)
 {
-	unsigned int n = 0;
-	int sign = 1;
-	int flag = 0;
+	unsigned int count = 0, size = 0, oi = 0, pn = 1, m = 1, i;
 
-	while (*s)
+	while (*(s + count) != '\0')
 	{
-		if (*s >= '0' && *s <= '9')
-		{
-			flag = 1;
-			if (sign > 0)
-			{
-				if (INT_MAX / 10 < (int) n)
-					return (INT_MAX);
-				n *= 10;
-				if (INT_MAX - (*s - '0') < (int) n)
-					return (INT_MAX);
-			}
-			else
-			{
-				if (INT_MIN / 10 < (int) -n)
-					return (INT_MIN);
-				n *= 10;
-				if (INT_MIN + (*s - '0') > (int) -n)
-					return (INT_MIN);
-			}
-			n += (*s - '0');
-		}
-		else if (flag)
-		{
+		if (size > 0 && (*(s + count) < '0' || *(s + count) > '9'))
 			break;
-		}
-		else if (*s == '-')
+
+		if (*(s + count) == '-')
+			pn *= -1;
+
+		if ((*(s + count) >= '0') && (*(s + count) <= '9'))
 		{
-			sign *= -1;
+			if (size > 0)
+				m *= 10;
+			size++;
 		}
-		++s;
+		count++;
 	}
 
-	return (n * sign);
+	for (i = count - size; i < count; i++)
+	{
+		oi = oi + ((*(s + i) - 48) * m);
+		m /= 10;
+	}
+	return (oi * pn);
 }
